@@ -1,0 +1,70 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+.env/
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Data files (can be large or regenerated)
+#data/*.csv
+data/*.parquet
+data/*.json
+
+# Simulation outputs
+*.log
+*.pkl
+*.h5
+*.npz
+
+# VSCode and PyCharm settings
+.vscode/
+.idea/
+
+# OS / Editor metadata
+.DS_Store
+Thumbs.db
+
+# Python-specific caches
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Optional: Notebook output clearing (if automated)
+**/*.nbconvert.ipynb
+
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+
+# PDF output
+*.pdf
+
+# Specific to report/ directory
+/report/*.pdf
+/report/*.aux
+/report/*.log
+/report/*.out
+/report/*.toc
+/report/*.synctex.gz

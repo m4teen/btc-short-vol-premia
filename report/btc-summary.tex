@@ -1,0 +1,69 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\title{BTC-Denominated Short Volatility Strategy}
+\author{Mikail — Undergraduate Mathematics Student}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Abstract}
+This project simulates a short-volatility options strategy on Bitcoin, using synthetic weekly options priced from BTC spot and realized volatility. The strategy sells one at-the-money (ATM) call and put (a strangle) each week, holding to expiry. All logic is BTC-denominated, and results are measured in Bitcoin rather than USD.
+
+\section*{Strategy Overview}
+Each week, the strategy:
+\begin{itemize}
+  \item Sells one ATM call and one ATM put
+  \item Holds both to expiry (7 days)
+  \item Calculates payoff and retains net BTC premium if options expire out-of-the-money
+\end{itemize}
+
+Options are priced using the Black-Scholes model with volatility derived from 10-day realized volatility and skew applied to puts/calls. No hedging or early exits are implemented in this baseline version.
+
+\section*{Data and Assumptions}
+\begin{itemize}
+  \item BTC spot data from Yahoo Finance (2017–2024)
+  \item Synthetic options chain generated weekly
+  \item Implied volatility approximated using realized volatility
+  \item No transaction costs, margin constraints, or slippage
+\end{itemize}
+
+\section*{Performance Summary (Example)}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+Metric & Value & Units \\
+\midrule
+Sharpe Ratio          & 0.85    & (weekly returns, annualized) \\
+Win Rate              & 62\%    & \\
+Max Drawdown          & -19\%   & of BTC equity \\
+Final BTC Balance     & 3.4     & BTC (starting from 1 BTC) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Risks and Limitations}
+\begin{itemize}
+  \item Unrealistic execution: assumes perfect liquidity and no cost
+  \item Uses historical volatility rather than true IV
+  \item No margin modeling or capital constraints
+  \item No hedging against directional exposure
+\end{itemize}
+
+\section*{Extensions and Next Steps}
+\begin{itemize}
+  \item Introduce volatility regime filters or trend filters
+  \item Simulate delta-hedging or early strangle exits
+  \item Add margin logic and collateral modeling in BTC
+  \item Compare against long vol strategies or BTC HODL
+\end{itemize}
+
+\noindent \textbf{GitHub:} \url{https://github.com/YOUR_USERNAME/btc-options-sim}
+
+\end{document}
