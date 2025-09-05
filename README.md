@@ -5,8 +5,6 @@ options strategies such as short strangles on Bitcoin. Built from
 scratch using Python and synthetic options chains generated from BTC
 price data and realized volatility.
 
-This project is designed for hands-on research in risk-premia harvesting and volatility dynamics in crypto-native terms.
-
 ---
 
 ## Overview
